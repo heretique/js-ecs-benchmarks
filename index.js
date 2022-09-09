@@ -1,10 +1,10 @@
 import * as libs from './libraries';
-import * as suts from './suites';
+import * as suits from './suites';
 import elegantSpinner from 'elegant-spinner';
 import logUpdate from 'log-update';
 
 const libraries = Object.values(libs);
-const suites = Object.values(suts);
+const suites = Object.values(suits);
 
 const now = () => {
     const hr = process.hrtime();
@@ -56,14 +56,14 @@ suites.forEach((suite) => {
 
     output.sort((o1, o2) => o1.sum - o2.sum);
 
-    console.log(`Suite ${suite.name} (${suite.iterations} iterations)`);
+    console.log(`Suite ${suite.name} (${suite.iterations} iterations, ${suite.entitiesNo} entities)`);
     output.forEach((out) => {
         const avg = Math.round(out.sum / suite.iterations);
         const percent = (out.sum / output[0].sum) * 100 - 100;
 
         const nameTxt = out.library.name.padEnd(12, ' ');
-        const sumTxt = `${Math.round(out.sum)}`.padStart(10, ' ') + 'ms';
-        const avgText = `${avg}`.padStart(6, ' ') + 'ms';
+        const sumTxt = `${Math.round(out.sum / 1000)}`.padStart(10, ' ') + 'ms';
+        const avgText = `${avg / 1000}`.padStart(6, ' ') + 'ms';
         const updateText =
             out.updates > 0 ? `${out.updates} updates`.padStart(16) : '';
 
