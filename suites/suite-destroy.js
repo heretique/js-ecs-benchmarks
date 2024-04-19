@@ -1,6 +1,6 @@
 export default {
     name: 'Destroy',
-    iterations: 100,
+    iterations: 50,
     entitiesNo: 10000,
     entities: [],
     setup(ctx) {

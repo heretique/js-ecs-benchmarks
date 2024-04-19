@@ -2,7 +2,7 @@ import { InstanceTypeTuple, Constructor } from "./util";
 /**
  * An opaque identifier used to access component arrays
  */
-export declare type Entity = number;
+export type Entity = number;
 /**
  * The Null entity can be used to initialiaze a variable
  * which is meant to hold an entity without actually using `null`.
@@ -212,7 +212,7 @@ export declare class World {
  *
  * If this callback returns `false`, the iteration will halt.
  */
-export declare type ViewCallback<T extends Constructor<Component>[]> = (entity: Entity, ...components: InstanceTypeTuple<T>) => false | void;
+export type ViewCallback<T extends Constructor<Component>[]> = (entity: Entity, ...components: InstanceTypeTuple<T>) => false | void;
 /**
  * A view is a non-owning entity iterator.
  *

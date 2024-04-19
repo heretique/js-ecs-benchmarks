@@ -56,7 +56,9 @@ suites.forEach((suite) => {
 
     output.sort((o1, o2) => o1.sum - o2.sum);
 
-    console.log(`Suite ${suite.name} (${suite.iterations} iterations, ${suite.entitiesNo} entities)`);
+    console.log(
+        `Suite ${suite.name} (${suite.iterations} iterations, ${suite.entitiesNo} entities)`
+    );
     output.forEach((out) => {
         const avg = Math.round(out.sum / suite.iterations);
         const percent = (out.sum / output[0].sum) * 100 - 100;

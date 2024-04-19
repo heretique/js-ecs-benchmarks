@@ -1,6 +1,6 @@
 export default {
     name: 'Add/Remove',
-    iterations: 100,
+    iterations: 50,
     entitiesNo: 10000,
     setup(ctx) {
         ctx.setup();
